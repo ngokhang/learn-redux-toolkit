@@ -27,11 +27,14 @@ export const listPhoneNumberReducer = createSlice({
     addToFavoriteList: (state, action) => {
       state.favoriteList.push(action.payload);
     },
+    deleteUserFavorite: (state, action) => {
+      state.favoriteList.splice(action.payload, 1);
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addUser, deleteUser, addToFavoriteList } =
+export const { addUser, deleteUser, addToFavoriteList, deleteUserFavorite } =
   listPhoneNumberReducer.actions;
 
 export default listPhoneNumberReducer.reducer;
